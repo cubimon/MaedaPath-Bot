@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.13.0)
+project(MaedaPath)
+find_package(OpenCV REQUIRED)
+find_package(X11 REQUIRED)
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${X11_LIBRARIES})
+target_include_directories(${PROJECT_NAME} PUBLIC ${X11_INCLUDE_DIR})
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
